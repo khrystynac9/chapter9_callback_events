@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang = "en">
+    <head>
+        <meta charset = "utf - 8">
+        <title>text</title>
+        <style>
+            body {
+                margin: 60px;
+            }
+            img {
+                margin: 20px;
+            }
+            img:hover {
+                cursor: pointer;
+            }
+        </style>
+        <script>
+        /* цей метод для одного об'єкта
+            window.onload = init;
+            function init() {
+                var image = document.getElementById("zero");
+                image.onclick = showAnswer;
+            }
+            function showAnswer() {
+                var image = document.getElementById("zero");
+                image.src = "img/slymachok.jpg";
+            }
+            */
+            
+            // а цей для багатьох об,єктів
+            
+            window.onload = init;
+            function init() {
+                var images = document.getElementsByTagName("img");
+                console.log(images);
+                for (var i = 0; i < images.length; i++) {
+                    images[i].onclick = showAnswer;
+                }
+            }
+            function showAnswer(eventObj) {
+                var image = eventObj.target;
+                var name = image.id;
+                name = name + ".jpg";
+                image.src = "img/" + name;
+            }
+        </script>
+    </head>
+    <body>
+        <img id = "zero" src = "img/zeroblur.jpg" alt = "slymak">
+        <img id = "one" src = "img/oneblur.jpg" alt = "aqua">
+        <img id = "two" src = "img/twoblur.jpg" alt = "kamin2">
+        <img id = "three" src = "img/threeblur.jpg" alt = "kozy2">
+        <img id = "four" src = "img/fourblur.jpg" alt = "moch2">
+        <img id = "five" src = "img/fiveblur.jpg" alt = "sea2">
+    </body>
+</html>
