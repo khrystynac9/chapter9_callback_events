@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang = "en">
     <head>
@@ -41,8 +42,17 @@
                 var image = eventObj.target;
                 var name = image.id;
                 name = name + ".jpg";
-                image.src = "img/" + name;
+                image.src = "img/" + name; 
+                
+                setTimeout(reblur, 3000, image);
             }
+            //зображення міняється на початкове через 2сек
+            function reblur(image) {
+                var name = image.id;
+                name = "img/"+name + "blur.jpg";
+                image.src = name;
+            }
+            
         </script>
     </head>
     <body>
@@ -54,3 +64,4 @@
         <img id = "five" src = "img/fiveblur.jpg" alt = "sea2">
     </body>
 </html>
+
